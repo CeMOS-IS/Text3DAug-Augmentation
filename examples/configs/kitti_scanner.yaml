@@ -1,0 +1,11 @@
+# Ray Casting params
+name: "Velodyne HDL-64E Lidar KITTI"
+beams: 64
+fov_up: 2
+fov_down: -24.8
+fov_hor: 360
+angle_res_hor: 0.09 
+res_hor: 4000 # res_hor=fov_hor/angle_res_hor
+height: 1.73    
+
+

@@ -1,0 +1,11 @@
+# Ray Casting params
+name: "Velodyne HDL32E"
+beams: 32
+fov_up: 10
+fov_down: -30
+fov_hor: 360
+angle_res_hor: 0.333333 
+res_hor: 1080 # res_hor=fov_hor/angle_res_hor
+height: 1.84023  
+
+

@@ -1,0 +1,10 @@
+bicycle: 2
+bicyclist: 2
+bus: 3
+car: 4
+# construction_vehicle: 5
+motorcycle: 6
+motorcyclist: 6
+# other_vehicle: 9
+pedestrian: 7
+truck: 10
