@@ -7,7 +7,7 @@
 
 [![arxiv.org](https://img.shields.io/badge/cs.CV-arXiv%3A0000.0000-B31B1B.svg)](https://arxiv.org/)
 [![cite-bibtex](https://img.shields.io/badge/Cite-BibTeX-1f425f.svg)](#citing)
-[![download meshes](https://img.shields.io/badge/Download-Meshes-b3a017.svg)](https://shields.io/)
+[![download meshes](https://img.shields.io/badge/Download-Meshes-b3a017.svg)](https://clousi.hs-mannheim.de/index.php/s/4qknpPB6PjPWEg9)
 
 ## About - Instance Augmentation
 
@@ -20,7 +20,6 @@ For the generation of meshes, please refer to the following [repository](https:/
 
 ## Installation
 
-The code was tested with CUDA 11.8 and Python 3.8.10. The code was not optimized for multi-GPU setups and various models only support 1 GPU.
 Install Text3DAug locally through
 
 ```
@@ -45,6 +44,11 @@ wget -P examples/ https://github.com/PRBonn/lidar_transfer/raw/main/minimal.zip
 ```
 unzip examples/minimal.zip -d examples/ && rm examples/minimal.zip 
 ```
+
+Example meshes can be downloaded from [here](https://clousi.hs-mannheim.de/index.php/s/4qknpPB6PjPWEg9).
+Generate a pickle file for the meshes using *pickle_file.py*.
+
+## Adapting to your Data
 
 You will have to modify either the augmentation or your pipeline. For example, OpenPCDet uses a dictionary to move data and uses class strings instead of integers
 in the ground truth bounding boxes.

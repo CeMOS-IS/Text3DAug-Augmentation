@@ -2,9 +2,8 @@ import os
 import pickle
 
 import numpy as np
-import yaml
-
 import text3daug
+import yaml
 
 try:
     from helpers.kitti_miniset import SemanticKITTIMiniset
@@ -42,7 +41,7 @@ if __name__ == "__main__":
     oversampling_weights = [1.0] * len(class_list)
     oversampling_weights = [x / len(class_list) for x in oversampling_weights]
 
-    # Initialize Text3-Augmentation
+    # Initialize Text3D-Augmentation
 
     # NOTE: Uncomment for Segmentation
     # aug = text3daug.SegmentationInstancesInstances(
