@@ -60,7 +60,7 @@ The augmentation operates on the following components:
 1. A dictionary mapping a List of *.obj*-mesh file paths to a class integer.
 In the example, a pickle file is created based on the folders from the [generation pipeline](https://github.com/CeMOS-IS/Text3DAug-Generation).
 However, a pickle file isnt necessary. You can use any dictionary for the augmentation.
-If you do create a pickle file using *pickle_file.py* the folder strucutre should be like follows:
+If you do create a pickle file using *pickle_file.py* the folder structure should be like follows:
 
 ```
 ├── folder_path/
