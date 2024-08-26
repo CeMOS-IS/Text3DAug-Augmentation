@@ -34,7 +34,7 @@ pip install open3d==0.13.0
 
 ## How to Use
 
-Please refer to the [example](#example).
+Please refer to *./examples/example.py*.
 Download a KITTI mini dataset from [here](https://github.com/PRBonn/lidar_transfer/blob/main/minimal.zip) and place it into the *./examples* folder.
 
 ```
