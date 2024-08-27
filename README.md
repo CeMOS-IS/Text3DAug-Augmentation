@@ -5,7 +5,7 @@
 [Laurenz Reichardt](https://scholar.google.com/citations?user=cBhzz5kAAAAJ&hl=en), Luca Uhr, [Oliver Wasenmüller](https://scholar.google.de/citations?user=GkHxKY8AAAAJ&hl=de) \
 **[CeMOS - Research and Transfer Center](https://www.cemos.hs-mannheim.de/ "CeMOS - Research and Transfer Center"), [University of Applied Sciences Mannheim](https://www.english.hs-mannheim.de/the-university.html "University of Applied Sciences Mannheim")**
 
-[![arxiv.org](https://img.shields.io/badge/cs.CV-arXiv%3A0000.0000-B31B1B.svg)](https://arxiv.org/)
+[![arxiv.org](https://img.shields.io/badge/cs.CV-arXiv%3A2408.14253-B31B1B.svg)](https://www.arxiv.org/abs/2408.14253)
 [![cite-bibtex](https://img.shields.io/badge/Cite-BibTeX-1f425f.svg)](#citing)
 [![download meshes](https://img.shields.io/badge/Download-Meshes-b3a017.svg)](https://clousi.hs-mannheim.de/index.php/s/4qknpPB6PjPWEg9)
 
