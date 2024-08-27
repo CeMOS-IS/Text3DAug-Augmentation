@@ -217,41 +217,52 @@ def save_to_pickle(out_path: str, class_mesh_mapping: dict):
 
 def cli_parse():
     parser = argparse.ArgumentParser(
-        description="Maps a mesh class (prompted string) to the corresponding dataset "
-        "integer labels. Associates the corresponding .obj mesh files to this label. "
-        "Returns a .pkl file containing a dict of Dict = class (int): List[paths to .obj meshes]"
+        description=(
+            "[INFO] Maps .obj mesh files to a class name."
+            " Meshes are associated with their class string and the string is converted to a"
+            " dataset integer, specified by the mapping (--config)."
+            " Assumes the following folder structure (--mesh_path):\n\n"
+            "├── mesh_path/\n"
+            "\t├── car/\n"
+            "\t\t├── 0.obj\n"
+            "\t\t├── 1.obj\n"
+            "\t\t├── ...\n"
+            "\t├── motorcycle/\n"
+            "\t\t├── ...\n"
+            "\t\t├── .../\n"
+            "\t .\n"
+            "\t .\n"
+            "\t .\n"
+            "\t├── clip.txt"
+        ),
+        formatter_class=argparse.RawTextHelpFormatter,
     )
     parser.add_argument(
-        "--mesh_path", type=str, help="Path to instance mesh folder.", required=True
+        "--mesh_path",
+        type=str,
+        help="Path to the mesh folder, which contains the class-named subfolders for the mesh files.",
+        required=True,
     )
 
-    _ = (
-        "Mapping prompt string class to dataset integer"
-        " - - - "
-        "NOTE: The standard KITTI training map assumes that unlabled "
-        "index is zero. This map may need to be adjusted depending on "
-        "the network. "
-        "If the network uses 255 or some other value for unlabeled, the "
-        "standard traing map does not apply. "
+    parser.add_argument(
+        "--config",
+        type=str,
+        help=(
+            "The .yaml mapping of dataset / prompt classes to a dataset integer."
+            " Can be found in the ./configs folder.\n"
+        ),
+        required=True,
     )
     parser.add_argument(
-        "--mapping",
+        "--name",
         type=str,
-        help=_,
+        help="A prefix name for the .pkl file, e.g. kitti.",
         required=True,
-        default=None,
-    )
-    parser.add_argument(
-        "--dataset",
-        type=str,
-        help="Dataset name which is used during saving of .pkl file.",
-        required=True,
-        default=None,
     )
     parser.add_argument(
         "--samples",
         type=int,
-        help="Number of top-k samples per class, filtered by CLIP score. Optional.",
+        help="Filter meshes by their CLIP score, including the top-k samples in the pickle file. Optional.",
         required=False,
         default=None,
     )
@@ -268,7 +279,7 @@ if __name__ == "__main__":
 
     clip_mapping = read_clip_eval(os.path.join(folder_path, "clip.txt"))
 
-    with open(args.mapping) as f:
+    with open(args.config) as f:
         label_mapping = yaml.safe_load(f)
 
     class_mesh_mapping = parse_mesh_files(args.mesh_path, label_mapping, clip_mapping)
@@ -279,5 +290,5 @@ if __name__ == "__main__":
     if args.samples:
         nr_meshes = str(args.samples)
 
-    out_path = f"./{args.dataset}_{nr_meshes}_instance_path.pkl"
+    out_path = f"./{args.name}_{nr_meshes}_instance_path.pkl"
     save_to_pickle(out_path, class_mesh_mapping)

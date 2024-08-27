@@ -1,7 +1,6 @@
 import os
 import pickle
 
-import numpy as np
 import text3daug
 import yaml
 
@@ -42,6 +41,9 @@ if __name__ == "__main__":
     oversampling_weights = [x / len(class_list) for x in oversampling_weights]
 
     # Initialize Text3D-Augmentation
+
+    # NOTE: Detection and Segmentation have different configs
+    # so the .pickle file needs to be generated again
 
     # NOTE: Uncomment for Segmentation
     # aug = text3daug.SegmentationInstancesInstances(
