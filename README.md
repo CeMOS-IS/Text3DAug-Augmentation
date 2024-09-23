@@ -99,3 +99,13 @@ Adjust as necessary.
 4. A remission or intensity file e.g. *./examples/remission_kitti.txt*. These are just the remission / intensity values of your data and will be randomly
 sampled during augmentation. These values depend on your sensor and you will have to create your own *.txt* file if you use different datasets.
 
+## Citing
+If you have used Text3DAug in your research, please cite our work. :mortar_board: 
+```bibtex
+@inproceedings{reichardt2024text3daug,
+    title = {Text3DAug – Prompted Instance Augmentation for LiDAR Perception},
+    author = {Reichardt, Laurenz and Uhr, Luca and Wasenm{\"u}ller, Oliver},
+    booktitle = {International Conference on Intelligent Robots and Systems (IROS)},
+    year = {2024},
+}
+```
